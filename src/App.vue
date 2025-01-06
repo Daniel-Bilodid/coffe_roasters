@@ -1,5 +1,4 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
   <appNav />
 </template>
 
@@ -14,12 +13,20 @@ export default {
 </script>
 
 <style>
+html,
+body {
+  height: 100%;
+
+  background-color: #fefcf7;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 43.56px;
 }
 </style>
