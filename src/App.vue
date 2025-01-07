@@ -1,13 +1,20 @@
 <template>
   <appNav />
+  <appHero />
+  <AppCollection />
 </template>
 
 <script>
 import AppNav from "./components/nav/AppNav.vue";
+import AppHero from "./components/hero/AppHero.vue";
+import AppCollection from "./components/collection/AppCollection.vue";
+
 export default {
   name: "App",
   components: {
     AppNav,
+    AppHero,
+    AppCollection,
   },
 };
 </script>
