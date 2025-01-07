@@ -8,7 +8,7 @@
         Great coffe made simple
       </h1>
       <p
-        class="text-base w-[445px] text-gray text-left font-normal font-barlow ml-[86px] mt-[32px]"
+        class="text-base w-[445px] text-descriptionGray text-left font-normal font-barlow ml-[86px] mt-[32px]"
       >
         Start your mornings with the world’s best coffees. Try our expertly
         curated artisan coffees from our best roasters delivered directly to
