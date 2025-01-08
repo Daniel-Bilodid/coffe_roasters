@@ -16,6 +16,7 @@ module.exports = {
         customBlack: "rgb(51, 61, 75);",
         customDarkBlue: "rgb(44, 52, 62);",
         customGreen: "rgb(14, 135, 132);",
+        customPink: "rgb(253, 214, 186);",
       },
     },
   },

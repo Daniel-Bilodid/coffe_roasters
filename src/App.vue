@@ -4,6 +4,7 @@
   <AppCollection />
   <AppChoose />
   <AppWork />
+  <AppFooter />
 </template>
 
 <script>
@@ -12,6 +13,8 @@ import AppHero from "./components/hero/AppHero.vue";
 import AppCollection from "./components/collection/AppCollection.vue";
 import AppChoose from "./components/choose/AppChoose.vue";
 import AppWork from "./components/work/AppWork.vue";
+import AppFooter from "./components/footer/AppFooter.vue";
+
 export default {
   name: "App",
   components: {
@@ -20,6 +23,7 @@ export default {
     AppCollection,
     AppChoose,
     AppWork,
+    AppFooter,
   },
 };
 </script>
