@@ -15,6 +15,7 @@ module.exports = {
           "linear-gradient(180.00deg, rgba(254, 252, 247, 0),rgb(254, 252, 247) 100%);",
         customBlack: "rgb(51, 61, 75);",
         customDarkBlue: "rgb(44, 52, 62);",
+        customGreen: "rgb(14, 135, 132);",
       },
     },
   },
