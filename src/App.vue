@@ -7,6 +7,8 @@
   <AppFooter /> -->
   <AppAboutHero />
   <AppCommitment />
+  <AppQuality />
+  <AppHeadquartes />
 </template>
 
 <script>
@@ -18,6 +20,8 @@ import AppNav from "./components/nav/AppNav.vue";
 // import AppFooter from "./components/footer/AppFooter.vue";
 import AppAboutHero from "./components/aboutPage/aboutHero/AppAboutHero.vue";
 import AppCommitment from "./components/aboutPage/commitment/AppCommitment.vue";
+import AppQuality from "./components/aboutPage/quality/AppQuality.vue";
+import AppHeadquartes from "./components/aboutPage/headquarters/AppHeadquartes.vue";
 export default {
   name: "App",
   components: {
@@ -29,6 +33,8 @@ export default {
     // AppFooter,
     AppAboutHero,
     AppCommitment,
+    AppQuality,
+    AppHeadquartes,
   },
 };
 </script>
