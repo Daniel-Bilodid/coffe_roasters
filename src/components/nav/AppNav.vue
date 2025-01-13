@@ -4,8 +4,8 @@
       <img :src="logo" alt="coffe logo" />
     </div>
     <ul class="flex gap-5 font-barlow font-bold uppercase text-customGray">
-      <li class="cursor-pointer">Home</li>
-      <li class="cursor-pointer">About us</li>
+      <router-link to="/" class="cursor-pointer">Home</router-link>
+      <router-link to="/about" class="cursor-pointer">About us</router-link>
       <li class="cursor-pointer">Create your plan</li>
     </ul>
   </div>

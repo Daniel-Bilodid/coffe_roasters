@@ -1,40 +1,20 @@
 <template>
   <appNav />
-  <!-- <appHero />
-  <AppCollection />
-  <AppChoose />
-  <AppWork />
-  <AppFooter /> -->
-  <AppAboutHero />
-  <AppCommitment />
-  <AppQuality />
-  <AppHeadquartes />
+  <router-view />
+  <AppFooter />
 </template>
 
 <script>
 import AppNav from "./components/nav/AppNav.vue";
-// import AppHero from "./components/hero/AppHero.vue";
-// import AppCollection from "./components/collection/AppCollection.vue";
-// import AppChoose from "./components/choose/AppChoose.vue";
-// import AppWork from "./components/work/AppWork.vue";
-// import AppFooter from "./components/footer/AppFooter.vue";
-import AppAboutHero from "./components/aboutPage/aboutHero/AppAboutHero.vue";
-import AppCommitment from "./components/aboutPage/commitment/AppCommitment.vue";
-import AppQuality from "./components/aboutPage/quality/AppQuality.vue";
-import AppHeadquartes from "./components/aboutPage/headquarters/AppHeadquartes.vue";
+
+import AppFooter from "./components/footer/AppFooter.vue";
+
 export default {
   name: "App",
   components: {
     AppNav,
-    // AppHero,
-    // AppCollection,
-    // AppChoose,
-    // AppWork,
-    // AppFooter,
-    AppAboutHero,
-    AppCommitment,
-    AppQuality,
-    AppHeadquartes,
+
+    AppFooter,
   },
 };
 </script>
