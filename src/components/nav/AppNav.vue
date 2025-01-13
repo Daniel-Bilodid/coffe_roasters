@@ -6,7 +6,9 @@
     <ul class="flex gap-5 font-barlow font-bold uppercase text-customGray">
       <router-link to="/" class="cursor-pointer">Home</router-link>
       <router-link to="/about" class="cursor-pointer">About us</router-link>
-      <li class="cursor-pointer">Create your plan</li>
+      <router-link to="/plan" class="cursor-pointer"
+        >Create your plan</router-link
+      >
     </ul>
   </div>
 </template>
