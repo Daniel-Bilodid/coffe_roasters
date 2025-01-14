@@ -53,12 +53,49 @@
         </li>
       </ul>
     </div>
-    <div>How do you drink your coffe?</div>
+
+    <div class="flex flex-col ml-[125px]">
+      <div
+        v-for="(section, index) in coffeOptions"
+        :key="index"
+        class="section"
+      >
+        <h2 class="font-fraunces text-[40px] font-black text-customGray">
+          {{ section.title }}
+        </h2>
+
+        <div class="flex flex-row gap-[23px]">
+          <div
+            v-for="(card, index) in section.cards"
+            :key="index"
+            class="w-[228px] h-[250px] rounded-[8px] bg-customCream cursor-pointer"
+          >
+            <div
+              class="font-fraunces font-black text-2xl mt-[32px] ml-[28px] text-left"
+            >
+              {{ card.title }}
+            </div>
+            <div
+              class="font-barlow text-base text-customBlack text-left mt-[24px] ml-[28px] w-[172px] h-[78px]"
+            >
+              {{ card.description }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import { coffeOptions } from "@/data/coffeOptions";
+
 export default {
   name: "AppPlanPick",
+  data() {
+    return {
+      coffeOptions,
+    };
+  },
 };
 </script>
