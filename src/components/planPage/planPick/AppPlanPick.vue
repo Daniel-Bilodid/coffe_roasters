@@ -49,26 +49,41 @@
             class="font-fraunces text-2xl font-black text-customGray mr-[28.5px]"
             >05</span
           >
-          Deliveriers
+          Deliveries
         </li>
       </ul>
     </div>
 
     <div class="flex flex-col ml-[125px]">
       <div
-        v-for="(section, index) in coffeOptions"
-        :key="index"
+        v-for="(section, sectionIndex) in coffeeOptions"
+        :key="sectionIndex"
         class="section"
       >
-        <h2 class="font-fraunces text-[40px] font-black text-customGray">
-          {{ section.title }}
-        </h2>
+        <div class="flex justify-between">
+          <h2
+            class="font-fraunces text-[40px] font-black text-customGray text-left mb-[56px]"
+          >
+            {{ section.title }}
+          </h2>
+          <img
+            class="w-[18.19px] h-[11.92px] mt-[30px]"
+            :src="iconArrow"
+            alt="arrow icon"
+          />
+        </div>
 
         <div class="flex flex-row gap-[23px]">
           <div
-            v-for="(card, index) in section.cards"
-            :key="index"
-            class="w-[228px] h-[250px] rounded-[8px] bg-customCream cursor-pointer"
+            v-for="(card, cardIndex) in section.cards"
+            :key="cardIndex"
+            :class="[
+              'w-[228px] h-[250px] rounded-[8px] cursor-pointer mb-[88px]',
+              selectedCards[sectionIndex] === card.title
+                ? 'bg-customGreen'
+                : 'bg-customCream',
+            ]"
+            @click="selectCard(sectionIndex, card.title)"
           >
             <div
               class="font-fraunces font-black text-2xl mt-[32px] ml-[28px] text-left"
@@ -88,13 +103,27 @@
 </template>
 
 <script>
-import { coffeOptions } from "@/data/coffeOptions";
+import { ref } from "vue";
+import { coffeeOptions } from "@/data/coffeOptions";
+import iconArrow from "@/assets/plan/desktop/icon-arrow.svg";
 
 export default {
   name: "AppPlanPick",
-  data() {
+  setup() {
+    const coffeeOptionsData = coffeeOptions;
+    const iconArrowImg = iconArrow;
+    const selectedCards = ref(Array(coffeeOptions.length).fill(null));
+
+    const selectCard = (sectionIndex, cardTitle) => {
+      selectedCards.value[sectionIndex] = cardTitle;
+      console.log("Selected Cards:", selectedCards.value);
+    };
+
     return {
-      coffeOptions,
+      coffeeOptions: coffeeOptionsData,
+      iconArrow: iconArrowImg,
+      selectedCards,
+      selectCard,
     };
   },
 };
