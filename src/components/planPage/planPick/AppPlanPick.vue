@@ -62,7 +62,8 @@
       >
         <div class="flex justify-between">
           <h2
-            class="font-fraunces text-[40px] font-black text-customGray text-left mb-[56px]"
+            class="font-fraunces text-[40px] font-black text-customGray text-left mb-[56px] cursor-pointer"
+            @click="toggleSection(sectionIndex)"
           >
             {{ section.title }}
           </h2>
@@ -73,21 +74,24 @@
           />
         </div>
 
-        <div class="flex flex-row gap-[23px]">
+        <div
+          v-if="expandedSections[sectionIndex]"
+          class="flex flex-row gap-[23px]"
+        >
           <div
             v-for="(card, cardIndex) in section.cards"
             :key="cardIndex"
             :class="[
-              'w-[228px] h-[250px] rounded-[8px] cursor-pointer mb-[88px]',
+              'w-[228px] h-[250px] rounded-[8px] cursor-pointer mb-[88px] hover:bg-customHover',
               selectedCards[sectionIndex] === card.title
-                ? 'bg-customGreen '
+                ? 'bg-customGreen'
                 : 'bg-customCream',
             ]"
             @click="selectCard(sectionIndex, card.title)"
           >
             <div
               :class="[
-                'font-fraunces font-black text-2xl mt-[32px] ml-[28px] text-left',
+                'font-fraunces font-black text-2xl mt-[32px] ml-[28px] text-left ',
                 selectedCards[sectionIndex] === card.title
                   ? 'text-white '
                   : 'text-black',
@@ -108,6 +112,7 @@
           </div>
         </div>
       </div>
+
       <div class="w-[730px] h-[208px] bg-customDarkBlue rounded-[10px]">
         <div
           class="text-white opacity-[0.5] font-barlow text-base uppercase text-left ml-[64px] mt-[31px]"
@@ -115,18 +120,22 @@
           Order Summary
         </div>
         <div
-          class="ml-[64px] mr-[64px] text-white font-fraunces font-black font-2xl"
+          class="ml-[64px] mr-[64px] text-white font-fraunces font-black text-[24px]"
         >
           “I drink my coffee as
-          {{ selectedCards[0] || "..." }}, with a
-          {{ selectedCards[1] || "..." }} type of bean.
-          {{ selectedCards[2] || "..." }} ground ala
-          {{ selectedCards[3] || "..." }}, sent to me
-          {{ selectedCards[4] || "..." }}”
+          <span class="text-customGreen">{{ selectedCards[0] || "..." }}</span
+          >, with a
+          <span class="text-customGreen">{{ selectedCards[1] || "..." }}</span>
+          type of bean.
+          <span class="text-customGreen">{{ selectedCards[2] || "..." }}</span>
+          ground ala
+          <span class="text-customGreen">{{ selectedCards[3] || "..." }}</span
+          >, sent to me
+          <span class="text-customGreen">{{ selectedCards[4] || "..." }}</span
+          >”
         </div>
-
-        {{ console.log("select", selectedCards) }}
       </div>
+      <button>Click</button>
     </div>
   </div>
 </template>
@@ -140,20 +149,34 @@ import iconArrow from "@/assets/plan/desktop/icon-arrow.svg";
 export default {
   name: "AppPlanPick",
   setup() {
-    const coffeeOptionsData = coffeeOptions;
-    const iconArrowImg = iconArrow;
+    const expandedSections = ref(Array(coffeeOptions.length).fill(false));
     const selectedCards = ref(Array(coffeeOptions.length).fill("..."));
+
+    let selected;
+    const toggleSection = (sectionIndex) => {
+      expandedSections.value = expandedSections.value.map((expanded, index) =>
+        index === sectionIndex ? !expanded : expanded
+      );
+    };
 
     const selectCard = (sectionIndex, cardTitle) => {
       selectedCards.value[sectionIndex] = cardTitle;
-      console.log("Selected Cards:", selectedCards.value);
+      selected = cardTitle;
+
+      if (sectionIndex === 0 && cardTitle === "Capsule") {
+        console.log("yes", expandedSections.value[3]);
+        expandedSections.value[3] = false;
+      }
     };
 
     return {
-      coffeeOptions: coffeeOptionsData,
-      iconArrow: iconArrowImg,
+      coffeeOptions,
+      iconArrow,
+      expandedSections,
       selectedCards,
+      toggleSection,
       selectCard,
+      selected,
     };
   },
 };
