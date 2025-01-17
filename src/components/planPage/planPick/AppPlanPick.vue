@@ -129,8 +129,12 @@
           <span class="text-customGreen">{{ selectedCards[1] || "..." }}</span>
           type of bean.
           <span class="text-customGreen">{{ selectedCards[2] || "..." }}</span>
-          ground ala
-          <span class="text-customGreen">{{ selectedCards[3] || "..." }}</span
+          <span :class="[selected ? 'hidden' : 'visible']"> ground ala </span>
+          <span
+            :class="[
+              selected ? 'text-customGreen hidden' : 'text-customGreen visible',
+            ]"
+            >{{ selectedCards[3] || "..." }}</span
           >, sent to me
           <span class="text-customGreen">{{ selectedCards[4] || "..." }}</span
           >”
@@ -154,23 +158,18 @@ export default {
     const selectedCards = ref(Array(coffeeOptions.length).fill("..."));
 
     const selected = ref(false);
+
     const toggleSection = (sectionIndex) => {
-      console.log(sectionIndex);
-
-      if (selected.value && sectionIndex === 3) {
-        return;
-      }
-
       expandedSections.value = expandedSections.value.map((expanded, index) => {
-        console.log(expanded);
-        if (index === sectionIndex) {
-          return !expanded;
-        } else {
-          return expanded;
+        if (selected.value && index === 3) {
+          return false;
         }
+
+        return index === sectionIndex ? !expanded : expanded;
       });
     };
 
+    console.log(expandedSections.value);
     const selectCard = (sectionIndex, cardTitle) => {
       if (sectionIndex === 0) {
         selected.value = cardTitle === "Capsule";
