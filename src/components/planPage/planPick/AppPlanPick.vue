@@ -33,12 +33,13 @@
         </li>
         <div class="w-full h-[1px] bg-customGray mt-[24px] mb-[24px]"></div>
         <li
-          class="text-left font-fraunces text-2xl font-black text-customGray cursor-pointer"
+          :class="[
+            selected
+              ? 'text-left font-fraunces text-2xl font-black  cursor-pointer opacity-[0.2]'
+              : 'text-left font-fraunces text-2xl font-black text-customGray cursor-pointer',
+          ]"
         >
-          <span
-            class="font-fraunces text-2xl font-black text-customGray mr-[28.5px]"
-            >04</span
-          >
+          <span class="font-fraunces text-2xl font-black mr-[28.5px]">04</span>
           Grind Option
         </li>
         <div class="w-full h-[1px] bg-customGray mt-[24px] mb-[24px]"></div>
@@ -143,7 +144,7 @@
 <script>
 import { ref } from "vue";
 import { coffeeOptions } from "@/data/coffeOptions";
-
+import { listOptions } from "@/data/listOptions";
 import iconArrow from "@/assets/plan/desktop/icon-arrow.svg";
 
 export default {
@@ -152,25 +153,35 @@ export default {
     const expandedSections = ref(Array(coffeeOptions.length).fill(false));
     const selectedCards = ref(Array(coffeeOptions.length).fill("..."));
 
-    let selected;
+    const selected = ref(false);
     const toggleSection = (sectionIndex) => {
-      expandedSections.value = expandedSections.value.map((expanded, index) =>
-        index === sectionIndex ? !expanded : expanded
-      );
+      console.log(sectionIndex);
+
+      if (selected.value && sectionIndex === 3) {
+        return;
+      }
+
+      expandedSections.value = expandedSections.value.map((expanded, index) => {
+        console.log(expanded);
+        if (index === sectionIndex) {
+          return !expanded;
+        } else {
+          return expanded;
+        }
+      });
     };
 
     const selectCard = (sectionIndex, cardTitle) => {
-      selectedCards.value[sectionIndex] = cardTitle;
-      selected = cardTitle;
-
-      if (sectionIndex === 0 && cardTitle === "Capsule") {
-        console.log("yes", expandedSections.value[3]);
-        expandedSections.value[3] = false;
+      if (sectionIndex === 0) {
+        selected.value = cardTitle === "Capsule";
       }
+
+      selectedCards.value[sectionIndex] = cardTitle;
     };
 
     return {
       coffeeOptions,
+      listOptions,
       iconArrow,
       expandedSections,
       selectedCards,
