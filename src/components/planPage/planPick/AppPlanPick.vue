@@ -3,7 +3,11 @@
     <div>
       <ul class="w-[255px] h-[356px] ml-[85px]">
         <li
-          class="text-left font-fraunces text-2xl font-black text-customBlack cursor-pointer"
+          :class="[
+            selectedIndex === 0
+              ? 'text-left font-fraunces text-2xl font-black text-customBlack cursor-pointer]'
+              : 'text-left font-fraunces text-2xl font-black text-customGray cursor-pointer]',
+          ]"
         >
           <span
             class="font-fraunces text-2xl font-black text-customGray mr-[28.5px]"
@@ -13,7 +17,11 @@
         </li>
         <div class="w-full h-[1px] bg-customGray mt-[24px] mb-[24px]"></div>
         <li
-          class="text-left font-fraunces text-2xl font-black text-customGray cursor-pointer"
+          :class="[
+            selectedIndex === 1
+              ? 'text-left font-fraunces text-2xl font-black text-customBlack cursor-pointer]'
+              : 'text-left font-fraunces text-2xl font-black text-customGray cursor-pointer]',
+          ]"
         >
           <span
             class="font-fraunces text-2xl font-black text-customGray mr-[28.5px]"
@@ -23,7 +31,11 @@
         </li>
         <div class="w-full h-[1px] bg-customGray mt-[24px] mb-[24px]"></div>
         <li
-          class="text-left font-fraunces text-2xl font-black text-customGray cursor-pointer"
+          :class="[
+            selectedIndex === 2
+              ? 'text-left font-fraunces text-2xl font-black text-customBlack cursor-pointer]'
+              : 'text-left font-fraunces text-2xl font-black text-customGray cursor-pointer]',
+          ]"
         >
           <span
             class="font-fraunces text-2xl font-black text-customGray mr-[28.5px]"
@@ -36,7 +48,10 @@
           :class="[
             selected
               ? 'text-left font-fraunces text-2xl font-black  cursor-pointer opacity-[0.2]'
-              : 'text-left font-fraunces text-2xl font-black text-customGray cursor-pointer',
+              : 'text-left font-fraunces text-2xl font-black text-customGray cursor-pointer' &&
+                selectedIndex === 3
+              ? 'text-left font-fraunces text-2xl font-black text-customBlack cursor-pointer]'
+              : 'text-left font-fraunces text-2xl font-black text-customGray cursor-pointer]',
           ]"
         >
           <span class="font-fraunces text-2xl font-black mr-[28.5px]">04</span>
@@ -44,7 +59,11 @@
         </li>
         <div class="w-full h-[1px] bg-customGray mt-[24px] mb-[24px]"></div>
         <li
-          class="text-left font-fraunces text-2xl font-black text-customGray cursor-pointer"
+          :class="[
+            selectedIndex === 4
+              ? 'text-left font-fraunces text-2xl font-black text-customBlack cursor-pointer]'
+              : 'text-left font-fraunces text-2xl font-black text-customGray cursor-pointer]',
+          ]"
         >
           <span
             class="font-fraunces text-2xl font-black text-customGray mr-[28.5px]"
@@ -164,8 +183,11 @@ export default {
     const selectedCards = ref(Array(coffeeOptions.length).fill("..."));
 
     const selected = ref(false);
+    const selectedIndex = ref();
 
     const toggleSection = (sectionIndex) => {
+      selectedIndex.value = sectionIndex;
+
       const updatedSections = expandedSections.value.map((expanded, index) => {
         if (index === 3 && selected.value) {
           return false;
@@ -194,6 +216,7 @@ export default {
       toggleSection,
       selectCard,
       selected,
+      selectedIndex,
     };
   },
 };
