@@ -140,7 +140,13 @@
           >”
         </div>
       </div>
-      <button>Click</button>
+      <div class="flex justify-end mt-[40px]">
+        <button
+          class="w-[217px] h-[56px] rounded-[6px] bg-customGreen font-fraunces text-[18px] font-black text-center text-descriptionGray mr-0"
+        >
+          Create my plan!
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -160,13 +166,14 @@ export default {
     const selected = ref(false);
 
     const toggleSection = (sectionIndex) => {
-      expandedSections.value = expandedSections.value.map((expanded, index) => {
-        if (selected.value && index === 3) {
+      const updatedSections = expandedSections.value.map((expanded, index) => {
+        if (index === 3 && selected.value) {
           return false;
         }
-
         return index === sectionIndex ? !expanded : expanded;
       });
+
+      expandedSections.value = updatedSections;
     };
 
     console.log(expandedSections.value);
