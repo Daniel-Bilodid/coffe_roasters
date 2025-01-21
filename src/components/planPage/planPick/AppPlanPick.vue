@@ -144,7 +144,7 @@
           Order Summary
         </div>
         <div
-          class="ml-[64px] mr-[64px] text-white font-fraunces font-black text-[24px]"
+          class="w-[602px] h-[80px] ml-[64px] mr-[64px] text-white font-fraunces font-black text-[24px]"
         >
           “I drink my coffee as
           <span class="text-customGreen">{{ selectedCards[0] || "..." }}</span
@@ -172,6 +172,27 @@
       </div>
     </div>
   </div>
+  <AppPlanModal>
+    <div
+      class="ml-[64px] mr-[64px] text-white font-fraunces font-black text-[24px]"
+    >
+      “I drink my coffee as
+      <span class="text-customGreen">{{ selectedCards[0] || "..." }}</span
+      >, with a
+      <span class="text-customGreen">{{ selectedCards[1] || "..." }}</span> type
+      of bean.
+      <span class="text-customGreen">{{ selectedCards[2] || "..." }}</span>
+      <span :class="[selected ? 'hidden' : 'visible']"> ground ala </span>
+      <span
+        :class="[
+          selected ? 'text-customGreen hidden' : 'text-customGreen visible',
+        ]"
+        >{{ selectedCards[3] || "..." }}</span
+      >, sent to me
+      <span class="text-customGreen">{{ selectedCards[4] || "..." }}</span
+      >”
+    </div>
+  </AppPlanModal>
 </template>
 
 <script>
@@ -180,8 +201,13 @@ import { coffeeOptions } from "@/data/coffeOptions";
 import { listOptions } from "@/data/listOptions";
 import iconArrow from "@/assets/plan/desktop/icon-arrow.svg";
 
+import AppPlanModal from "../planModal/AppPlanModal.vue";
+
 export default {
   name: "AppPlanPick",
+  components: {
+    AppPlanModal,
+  },
   setup() {
     const expandedSections = ref(Array(coffeeOptions.length).fill(false));
     const selectedCards = ref(Array(coffeeOptions.length).fill("..."));
