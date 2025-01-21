@@ -82,7 +82,11 @@
       >
         <div class="flex justify-between">
           <h2
-            class="font-fraunces text-[40px] font-black text-customGray text-left mb-[56px] cursor-pointer"
+            :class="[
+              selected && sectionIndex === 3
+                ? 'font-fraunces text-[40px] font-black text-customGray text-left mb-[56px] cursor-pointer opacity-[0.5]'
+                : 'font-fraunces text-[40px] font-black text-customGray text-left mb-[56px] cursor-pointer',
+            ]"
             @click="toggleSection(sectionIndex)"
           >
             {{ section.title }}
@@ -205,6 +209,7 @@ export default {
       }
 
       selectedCards.value[sectionIndex] = cardTitle;
+      selectedIndex.value = sectionIndex;
     };
 
     return {
