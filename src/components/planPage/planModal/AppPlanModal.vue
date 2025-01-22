@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <div class="w-[540px] h-[597px] bg-customPink rounded-[8px]">
+  <div class="relative w-screen h-screen">
+    <div
+      class="w-[540px] h-[597px] bg-customPink rounded-[8px] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+    >
       <div
         class="w-full h-[136px] bg-customDarkBlue text-white text-[40px] font-fraunces font-black pl-[56px] pt-[45px] text-left"
       >

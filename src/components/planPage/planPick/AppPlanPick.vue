@@ -174,7 +174,7 @@
   </div>
   <AppPlanModal>
     <div
-      class="ml-[64px] mr-[64px] text-white font-fraunces font-black text-[24px]"
+      class="w-[428px] ml-[64px] mr-[64px] text-white font-fraunces font-black text-[24px] mt-[57px] text-left"
     >
       “I drink my coffee as
       <span class="text-customGreen">{{ selectedCards[0] || "..." }}</span
