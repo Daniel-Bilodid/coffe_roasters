@@ -166,15 +166,16 @@
       <div class="flex justify-end mt-[40px]">
         <button
           class="w-[217px] h-[56px] rounded-[6px] bg-customGreen font-fraunces text-[18px] font-black text-center text-descriptionGray mr-0"
+          @click="appModal = true"
         >
           Create my plan!
         </button>
       </div>
     </div>
   </div>
-  <AppPlanModal>
+  <AppPlanModal v-if="appModal">
     <div
-      class="w-[428px] ml-[64px] mr-[64px] text-white font-fraunces font-black text-[24px] mt-[57px] text-left"
+      class="w-[428px] ml-[64px] mr-[64px] text-customTextGray font-fraunces font-black text-[24px] mt-[57px] text-left"
     >
       “I drink my coffee as
       <span class="text-customGreen">{{ selectedCards[0] || "..." }}</span
@@ -214,6 +215,7 @@ export default {
 
     const selected = ref(false);
     const selectedIndex = ref();
+    const appModal = ref(false);
 
     const toggleSection = (sectionIndex) => {
       selectedIndex.value = sectionIndex;
@@ -248,6 +250,7 @@ export default {
       selectCard,
       selected,
       selectedIndex,
+      appModal,
     };
   },
 };

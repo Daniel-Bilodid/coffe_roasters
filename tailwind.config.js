@@ -19,6 +19,8 @@ module.exports = {
         customPink: "rgb(253, 214, 186);",
         customCream: "rgb(244, 241, 235);",
         customHover: "rgb(253, 214, 186);",
+        customTextGray: "rgb(129, 138, 144)",
+        customBtnHover: "rgb(102, 210, 207);",
       },
     },
   },
