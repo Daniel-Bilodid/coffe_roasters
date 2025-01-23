@@ -173,7 +173,11 @@
       </div>
     </div>
   </div>
-  <AppPlanModal v-if="appModal">
+  <AppPlanModal
+    v-if="appModal"
+    :modalToggle="appModal"
+    @close="appModal = false"
+  >
     <div
       class="w-[428px] ml-[64px] mr-[64px] text-customTextGray font-fraunces font-black text-[24px] mt-[57px] text-left"
     >

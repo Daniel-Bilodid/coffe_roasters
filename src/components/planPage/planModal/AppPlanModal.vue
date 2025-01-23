@@ -2,9 +2,8 @@
   <div class="relative w-screen h-screen inset-0">
     <div
       class="fixed inset-0 bg-black bg-opacity-50 z-40"
-      @click="modalToggle = false"
+      @click="$emit('close')"
     ></div>
-
     <div
       class="w-[540px] h-[597px] bg-descriptionGray rounded-[8px] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50"
     >
@@ -30,6 +29,7 @@
         </div>
         <button
           class="w-[217px] h-[56px] rounded-[6px] bg-customGreen font-fraunces text-[18px] font-black text-descriptionGray hover:bg-customBtnHover"
+          @click="$emit('close')"
         >
           Checkout
         </button>
@@ -39,13 +39,14 @@
 </template>
 
 <script>
-import { ref } from "vue";
 export default {
   name: "AppPlanModal",
-  setup() {
-    const modalToggle = ref(false);
-
-    return modalToggle;
+  props: {
+    modalToggle: {
+      type: Boolean,
+      required: true,
+    },
   },
+  emits: ["close"],
 };
 </script>
