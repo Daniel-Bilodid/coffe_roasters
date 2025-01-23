@@ -198,6 +198,7 @@
       >”
     </div>
   </AppPlanModal>
+  <button @click="clearFunc">clear</button>
 </template>
 
 <script>
@@ -234,6 +235,10 @@ export default {
       expandedSections.value = updatedSections;
     };
 
+    const clearFunc = () => {
+      console.log(selectedCards.value);
+    };
+
     console.log(expandedSections.value);
     const selectCard = (sectionIndex, cardTitle) => {
       if (sectionIndex === 0) {
@@ -255,6 +260,7 @@ export default {
       selected,
       selectedIndex,
       appModal,
+      clearFunc,
     };
   },
 };
