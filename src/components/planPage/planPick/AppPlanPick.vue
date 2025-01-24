@@ -181,24 +181,25 @@
     v-if="appModal"
     :modalToggle="appModal"
     @close="appModal = false"
+    :clearModal="clearModal"
   >
     <div
       class="w-[428px] ml-[64px] mr-[64px] text-customTextGray font-fraunces font-black text-[24px] mt-[57px] text-left"
     >
       “I drink my coffee as
-      <span class="text-customGreen">{{ selectedCards[0] || "..." }}</span
+      <span class="text-customGreen">{{ selectedCards[0] || "_____" }}</span
       >, with a
-      <span class="text-customGreen">{{ selectedCards[1] || "..." }}</span> type
-      of bean.
-      <span class="text-customGreen">{{ selectedCards[2] || "..." }}</span>
+      <span class="text-customGreen">{{ selectedCards[1] || "_____" }}</span>
+      type of bean.
+      <span class="text-customGreen">{{ selectedCards[2] || "_____" }}</span>
       <span :class="[selected ? 'hidden' : 'visible']"> ground ala </span>
       <span
         :class="[
           selected ? 'text-customGreen hidden' : 'text-customGreen visible',
         ]"
-        >{{ selectedCards[3] || "..." }}</span
+        >{{ selectedCards[3] || "_____" }}</span
       >, sent to me
-      <span class="text-customGreen">{{ selectedCards[4] || "..." }}</span
+      <span class="text-customGreen">{{ selectedCards[4] || "_____" }}</span
       >”
     </div>
   </AppPlanModal>
@@ -220,7 +221,7 @@ export default {
   },
   setup() {
     const expandedSections = ref(Array(coffeeOptions.length).fill(false));
-    const selectedCards = ref(Array(coffeeOptions.length).fill("..."));
+    const selectedCards = ref(Array(coffeeOptions.length).fill("_____"));
 
     const selected = ref(false);
     const selectedIndex = ref();
@@ -239,11 +240,9 @@ export default {
       expandedSections.value = updatedSections;
     };
 
-    const clearFunc = () => {
+    const clearModal = () => {
       console.log(selectedCards.value);
-      selectedCards.value.forEach((_, index) => {
-        selectedCards[index] = "newElement";
-      });
+      selectedCards.value = Array(coffeeOptions.length).fill("_____");
     };
 
     console.log(expandedSections.value);
@@ -267,7 +266,7 @@ export default {
       selected,
       selectedIndex,
       appModal,
-      clearFunc,
+      clearModal,
     };
   },
 };

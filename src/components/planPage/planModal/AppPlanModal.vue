@@ -29,7 +29,7 @@
         </div>
         <button
           class="w-[217px] h-[56px] rounded-[6px] bg-customGreen font-fraunces text-[18px] font-black text-descriptionGray hover:bg-customBtnHover"
-          @click="$emit('close')"
+          @click="handleCheckout"
         >
           Checkout
         </button>
@@ -45,6 +45,18 @@ export default {
     modalToggle: {
       type: Boolean,
       required: true,
+    },
+    clearModal: {
+      type: Function,
+      required: false,
+    },
+  },
+  methods: {
+    handleCheckout() {
+      if (this.clearModal) {
+        this.clearModal();
+      }
+      this.$emit("close");
     },
   },
   emits: ["close"],
