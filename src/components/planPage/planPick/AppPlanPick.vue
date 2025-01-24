@@ -144,22 +144,26 @@
           Order Summary
         </div>
         <div
-          class="w-[602px] h-[80px] ml-[64px] mr-[64px] text-white font-fraunces font-black text-[24px]"
+          class="w-[602px] h-[80px] ml-[64px] mr-[64px] text-white font-fraunces font-black text-[24px] text-left"
         >
           “I drink my coffee as
-          <span class="text-customGreen">{{ selectedCards[0] || "..." }}</span
+          <span class="text-customGreen">{{ selectedCards[0] || "_____" }}</span
           >, with a
-          <span class="text-customGreen">{{ selectedCards[1] || "..." }}</span>
+          <span class="text-customGreen">{{
+            selectedCards[1] || "_____"
+          }}</span>
           type of bean.
-          <span class="text-customGreen">{{ selectedCards[2] || "..." }}</span>
+          <span class="text-customGreen">{{
+            selectedCards[2] || "_____"
+          }}</span>
           <span :class="[selected ? 'hidden' : 'visible']"> ground ala </span>
           <span
             :class="[
               selected ? 'text-customGreen hidden' : 'text-customGreen visible',
             ]"
-            >{{ selectedCards[3] || "..." }}</span
+            >{{ selectedCards[3] || "_____" }}</span
           >, sent to me
-          <span class="text-customGreen">{{ selectedCards[4] || "..." }}</span
+          <span class="text-customGreen">{{ selectedCards[4] || "_____" }}</span
           >”
         </div>
       </div>
@@ -237,6 +241,9 @@ export default {
 
     const clearFunc = () => {
       console.log(selectedCards.value);
+      selectedCards.value.forEach((_, index) => {
+        selectedCards[index] = "newElement";
+      });
     };
 
     console.log(expandedSections.value);
