@@ -1,15 +1,25 @@
 <template>
   <div class="flex justify-between">
     <div>
-      <img :src="logo" alt="coffe logo" />
+      <img
+        class="w-[163px] h-[18px] sm:w-[236px] sm:h-[26px]"
+        :src="logo"
+        alt="coffe logo"
+      />
     </div>
-    <ul class="flex gap-5 font-barlow font-bold uppercase text-customGray">
-      <router-link to="/" class="cursor-pointer">Home</router-link>
-      <router-link to="/about" class="cursor-pointer">About us</router-link>
-      <router-link to="/plan" class="cursor-pointer"
+    <ul
+      class="gap-5 font-barlow font-bold uppercase text-customGray text-[12px] hidden sm:flex"
+    >
+      <router-link to="/" class="cursor-pointer mt-[10px]">Home</router-link>
+      <router-link to="/about" class="cursor-pointer mt-[10px]"
+        >About us</router-link
+      >
+      <router-link to="/plan" class="cursor-pointer mt-[10px]"
         >Create your plan</router-link
       >
     </ul>
+
+    <div class="visible sm:hidden">Burger</div>
   </div>
 </template>
 
