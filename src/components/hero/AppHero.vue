@@ -1,22 +1,27 @@
 <template>
   <div class="relative">
-    <img class="mt-[45px] rounded-[10px] w-[100%]" :src="hero" alt="" />
-    <div class="absolute top-0">
+    <img
+      class="mt-[45px] rounded-[10px] w-full xl:h-[600px] h-[500px] object-cover"
+      :src="hero"
+      alt="Hero Image"
+    />
+    <div
+      class="absolute inset-0 flex flex-col justify-center sm:items-start items-center sm:text-left text-center ml-[24px] sm:ml-[58px] xl:ml-[86px]"
+    >
       <h1
-        class="text-7xl text-white font-black font-fraunces w-[493px] text-left mt-[117px] ml-[85px]"
+        class="xl:text-7xl sm:text-[48px] text-[40px] text-white font-black font-fraunces xl:w-[493px] sm:w-[329px] w-[279px] xl:leading-[72px] sm:leading-[45px] leading-[40px]"
       >
-        Great coffe made simple
+        Great coffee made simple
       </h1>
       <p
-        class="text-base w-[445px] text-descriptionGray text-left font-normal font-barlow ml-[86px] mt-[32px]"
+        class="text-base xl:w-[445px] sm:w-[398px] w-[279px] text-descriptionGray font-normal font-barlow mt-[24px]"
       >
         Start your mornings with the world’s best coffees. Try our expertly
         curated artisan coffees from our best roasters delivered directly to
         your door, at your schedule.
       </p>
-
       <button
-        class="bg-primaryBtn w-[217px] h-[56px] rounded-[6px] absolute left-[86px] mt-[56px] text-white font-fraunces font-black text-lg"
+        class="bg-primaryBtn w-[217px] h-[56px] rounded-[6px] mt-[32px] text-white font-fraunces font-black text-lg"
       >
         Create your plan
       </button>
