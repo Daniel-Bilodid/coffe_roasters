@@ -17,26 +17,28 @@
       </p>
     </div>
 
-    <div class="flex flex-col xl:flex-row mt-[-224px]">
+    <div
+      class="flex flex-col xl:flex-row mt-[-304px] xl:mt-[-224px] gap-[24px] xl:gap-0"
+    >
       <div
         v-for="card in chooseCards"
         :key="card.id"
         class="sm:w-[90%] sm:h-[180px] xl:w-[382px] xl:h-[350px] bg-customGreen mx-[30px] rounded-[8px] flex xl:block"
       >
         <img
-          class="mx-auto mt-[72px]"
+          class="xl:mx-auto ml-[70.5px] mt-[62px] xl:mt-[72px]"
           :src="card.icon"
           :alt="card.title"
           :style="{ width: card.id === 3 ? '72px' : '71px', height: '72px' }"
         />
         <div>
           <p
-            class="font-black text-2xl font-fraunces text-descriptionGray mt-[56px]"
+            class="font-black text-2xl font-fraunces text-descriptionGray mt-[41px] xl:mt-[56px] text-left xl:text-center"
           >
             {{ card.title }}
           </p>
           <p
-            class="font-barlow text-base font-normal text-descriptionGray w-[255px] text-center mx-auto mt-[24px]"
+            class="font-barlow text-base text-left font-normal text-descriptionGray w-[344px] ml-[55.5px] mb-[41px] xl:mb-0 xl:ml-0 xl:w-[255px] xl:text-center mx-auto mt-[24px]"
           >
             {{ card.description }}
           </p>
