@@ -1,7 +1,11 @@
 <template>
   <div class="ml-[86px] mr-[86px] mt-[189px] relative">
-    <div class="bg-customDarkBlue w-[100%] h-[577px] rounded-[10px]">
-      <p class="text-white pt-[110px] text-[40px] font-black font-fraunces">
+    <div
+      class="bg-customDarkBlue w-[327px] h-[902px] md:w-[100%] md:h-[573px] rounded-[10px]"
+    >
+      <p
+        class="text-white pt-[64px] xl:pt-[110px] text-[28px] sm:text-[32px] xl:text-[40px] font-black font-fraunces"
+      >
         Why choose us?
       </p>
       <p
@@ -13,80 +17,43 @@
       </p>
     </div>
 
-    <div class="flex mt-[-224px]">
-      <div class="w-[382px] h-[350px] bg-customGreen ml-[86px] rounded-[8px]">
-        <img
-          class="w-[71px] h-[72px] mx-auto mt-[72px]"
-          :src="bean"
-          alt="bean"
-        />
-        <p
-          class="font-black text-2xl font-fraunces text-descriptionGray mt-[56px]"
-        >
-          Best quality
-        </p>
-        <p
-          class="font-barlow text-base font-normal text-descriptionGray w-[255px] text-center mx-auto mt-[24px]"
-        >
-          Discover an endless variety of the world’s best artisan coffee from
-          each of our roasters.
-        </p>
-      </div>
-
+    <div class="flex flex-col xl:flex-row mt-[-224px]">
       <div
-        class="w-[382px] h-[350px] bg-customGreen ml-[30px] mr-[30px] rounded-[8px]"
+        v-for="card in chooseCards"
+        :key="card.id"
+        class="sm:w-[90%] sm:h-[180px] xl:w-[382px] xl:h-[350px] bg-customGreen mx-[30px] rounded-[8px] flex xl:block"
       >
         <img
-          class="w-[72px] h-[72px] mx-auto mt-[72px]"
-          :src="gift"
-          alt="gift"
+          class="mx-auto mt-[72px]"
+          :src="card.icon"
+          :alt="card.title"
+          :style="{ width: card.id === 3 ? '72px' : '71px', height: '72px' }"
         />
-        <p
-          class="font-black text-2xl font-fraunces text-descriptionGray mt-[56px]"
-        >
-          Exclusive benefits
-        </p>
-        <p
-          class="font-barlow text-base font-normal text-descriptionGray w-[255px] text-center mx-auto mt-[24px]"
-        >
-          Special offers and swag when you subscribe, including 30% off your
-          first shipment.
-        </p>
-      </div>
-
-      <div class="w-[382px] h-[350px] bg-customGreen mr-[86px] rounded-[8px]">
-        <img
-          class="w-[72px] h-[50px] mx-auto mt-[83px]"
-          :src="truck"
-          alt="truck"
-        />
-        <p
-          class="font-black text-2xl font-fraunces text-descriptionGray mt-[67px]"
-        >
-          Free shipping
-        </p>
-        <p
-          class="font-barlow text-base font-normal text-descriptionGray w-[255px] text-center mx-auto mt-[24px]"
-        >
-          We cover the cost and coffee is delivered fast. Peak freshness:
-          guaranteed.
-        </p>
+        <div>
+          <p
+            class="font-black text-2xl font-fraunces text-descriptionGray mt-[56px]"
+          >
+            {{ card.title }}
+          </p>
+          <p
+            class="font-barlow text-base font-normal text-descriptionGray w-[255px] text-center mx-auto mt-[24px]"
+          >
+            {{ card.description }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import bean from "@/assets/home/desktop/icon-coffee-bean.svg";
-import gift from "@/assets/home/desktop/icon-gift.svg";
-import truck from "@/assets/home/desktop/icon-truck.svg";
+import { chooseCards } from "@/data/choose.js";
+
 export default {
   name: "AppChoose",
   data() {
     return {
-      bean,
-      gift,
-      truck,
+      chooseCards,
     };
   },
 };
