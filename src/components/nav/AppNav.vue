@@ -19,12 +19,16 @@
       >
     </ul>
 
-    <div class="visible sm:hidden">Burger</div>
+    <div class="visible sm:hidden">
+      <AppBurgerMenu class="lg:hidden" />
+    </div>
   </div>
 </template>
 
 <script>
 import logo from "../../assets/shared/desktop/logo.svg";
+import AppBurgerMenu from "../burgerMenu/AppBurgerMenu.vue";
+
 export default {
   name: "AppNav",
   data() {
@@ -32,7 +36,10 @@ export default {
       logo,
     };
   },
+  components: {
+    AppBurgerMenu,
+  },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="css"></style>
