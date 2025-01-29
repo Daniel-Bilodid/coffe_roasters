@@ -26,7 +26,7 @@
         class="w-[279px] h-[382px] sm:w-[90%] sm:h-[180px] xl:w-[382px] xl:h-[350px] bg-customGreen mx-[30px] rounded-[8px] flex flex-col sm:flex-row xl:block"
       >
         <img
-          class="xl:mx-auto ml-[70.5px] mt-[62px] xl:mt-[72px]"
+          class="xl:mx-auto mx-auto sm:ml-[70.5px] mt-[62px] xl:mt-[72px]"
           :src="card.icon"
           :alt="card.title"
           :style="{ width: card.id === 3 ? '72px' : '71px', height: '72px' }"
