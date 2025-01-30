@@ -1,21 +1,22 @@
 <template>
-  <div class="flex justify-center gap-[125px] mt-[168px]">
-    <div>
+  <div
+    class="flex flex-col lg:flex-row items-center lg:justify-center lg:gap-[125px] mt-[100px] lg:mt-[168px] px-6"
+  >
+    <div class="w-full flex justify-center">
       <img
-        class="w-[445px] h-[520px] rounded-[8px]"
+        class="w-[280px] h-[320px] md:w-[445px] md:h-[520px] rounded-[8px]"
         :src="commitment"
-        alt="guy making a cup of coffe"
+        alt="guy making a cup of coffee"
       />
     </div>
-    <div>
-      <div
-        class="w-[357px] h-[48px] font-fraunces font-black text-customBlack text-[40px] text-left mt-[90px] mb-[32px]"
+    <div class="mt-[40px] lg:mt-[90px] text-center lg:text-left">
+      <h2
+        class="w-full font-fraunces font-black text-customBlack text-[28px] md:text-[32px] lg:text-[40px] mb-[16px] lg:mb-[32px]"
       >
         Our commitment
-      </div>
-
-      <div
-        class="w-[540px] h-[260px] font-barlow text-base text-customBlack opacity-[0.8] text-left"
+      </h2>
+      <p
+        class="w-full md:w-[540px] font-barlow text-base text-customBlack opacity-[0.8] text-center lg:text-left"
       >
         We’re built on a simple mission and a commitment to doing good along the
         way. We want to make it easy for you to discover and brew the world’s
@@ -28,7 +29,7 @@
         coffee plant science. Curating only the finest blends, we roast each lot
         to highlight tasting profiles distinctive to their native growing
         region.
-      </div>
+      </p>
     </div>
   </div>
 </template>
