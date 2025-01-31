@@ -19,7 +19,11 @@
         </div>
       </div>
       <div>
-        <img class="mt-[-70px] rounded-[8px]" :src="quality" alt="quality" />
+        <img
+          class="mt-[-70px] rounded-[8px]"
+          :src="currentQualityImage"
+          alt="quality"
+        />
       </div>
     </div>
   </div>
@@ -27,12 +31,30 @@
 
 <script>
 import quality from "@/assets/about/desktop/image-quality.jpg";
+import tabletQuality from "@/assets/about/tablet/image-quality.jpg";
+
 export default {
   name: "AppQuality",
   data() {
     return {
-      quality,
+      windowWidth: window.innerWidth,
     };
+  },
+  computed: {
+    currentQualityImage() {
+      return this.windowWidth < 1400 ? tabletQuality : quality;
+    },
+  },
+  methods: {
+    updateWindowWidth() {
+      this.windowWidth = window.innerWidth;
+    },
+  },
+  mounted() {
+    window.addEventListener("resize", this.updateWindowWidth);
+  },
+  beforeUnmount() {
+    window.removeEventListener("resize", this.updateWindowWidth);
   },
 };
 </script>
