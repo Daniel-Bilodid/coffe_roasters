@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="ml-[86px] mr-[86px] relative mt-[100px]">
-      <img class="w-[1111px]" :src="collection" alt="" />
+      <img class="w-[1111px] mx-auto mt-[134px]" :src="collection" alt="" />
 
       <div
         class="flex flex-col xl:flex-row w-[100%] gap-[25px] items-center xl:justify-center mt-[-50px]"
@@ -11,10 +11,14 @@
           :key="card.id"
           class="text-center sm:flex xl:block"
         >
-          <img class="w-[255px] h-[193px]" :src="card.src" :alt="card.title" />
+          <img
+            class="w-[255px] h-[193px] md:mt-[-5px] md:ml-[13px]"
+            :src="card.src"
+            :alt="card.title"
+          />
           <div>
             <p
-              class="text-customBlack font-black text-2xl font-fraunces w-[255px] mt-[61.55px] mb-[24px] text-center sm:text-left xl:text-center"
+              class="text-customBlack font-black text-2xl font-fraunces w-[255px] mt-[58px] mb-[24px] text-center sm:text-left xl:text-center md:ml-[5px]"
             >
               {{ card.title }}
             </p>

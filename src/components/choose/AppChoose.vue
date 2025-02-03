@@ -18,7 +18,7 @@
     </div>
 
     <div
-      class="flex flex-col items-center xl:flex-row mt-[-304px] xl:mt-[-224px] gap-[24px] xl:gap-0"
+      class="flex flex-col items-center xl:flex-row mt-[-304px] xl:mt-[-224px] gap-[24px] xl:gap-0 md:justify-center"
     >
       <div
         v-for="card in chooseCards"

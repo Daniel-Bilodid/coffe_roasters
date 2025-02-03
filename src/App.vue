@@ -32,8 +32,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-left: 80px;
-  margin-right: 80px;
+  margin-left: 310px;
+  margin-right: 310px;
   margin-top: 43.56px;
 }
 @media (max-width: 1024px) {

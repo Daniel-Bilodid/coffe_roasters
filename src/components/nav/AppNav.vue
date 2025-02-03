@@ -8,7 +8,7 @@
       />
     </div>
     <ul
-      class="gap-5 font-barlow font-bold uppercase text-customGray text-[12px] hidden sm:flex"
+      class="gap-[32px] md:mt-[-7px] font-barlow font-bold uppercase text-customGray text-[12px] hidden sm:flex tracking-[0.92px]"
     >
       <router-link to="/" class="cursor-pointer mt-[10px]">Home</router-link>
       <router-link to="/about" class="cursor-pointer mt-[10px]"

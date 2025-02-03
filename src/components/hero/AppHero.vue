@@ -6,15 +6,15 @@
       alt="Hero Image"
     />
     <div
-      class="absolute inset-0 flex flex-col justify-center sm:items-start items-center sm:text-left text-center ml-[24px] sm:ml-[58px] xl:ml-[86px]"
+      class="absolute inset-0 flex flex-col gap-[14px] justify-center sm:items-start items-center sm:text-left text-center ml-[24px] sm:ml-[58px] xl:ml-[86px]"
     >
       <h1
-        class="xl:text-7xl sm:text-[48px] text-[40px] text-white font-black font-fraunces xl:w-[493px] sm:w-[329px] w-[279px] xl:leading-[72px] sm:leading-[45px] leading-[40px]"
+        class="xl:text-7xl sm:text-[48px] text-[40px] text-white font-black font-fraunces xl:w-[493px] sm:w-[329px] w-[279px] xl:leading-[72px] sm:leading-[45px] leading-[40px] md:mt-[-39px] md:tracking-[1.44px]"
       >
-        Great coffee made simple
+        Great coffee made simple.
       </h1>
       <p
-        class="text-base xl:w-[445px] sm:w-[398px] w-[279px] text-descriptionGray font-normal font-barlow mt-[24px]"
+        class="text-base xl:w-[445px] sm:w-[398px] w-[279px] text-descriptionGray font-normal font-barlow mt-[20px]"
       >
         Start your mornings with the world’s best coffees. Try our expertly
         curated artisan coffees from our best roasters delivered directly to
