@@ -12,7 +12,7 @@
           />
 
           <ul
-            class="flex flex-col sm:flex-row xl:mt-[6.44px] mt-[33.56px] gap-[33px] xl:ml-[103px] font-barlow text-[12px] uppercase font-bold text-customGray"
+            class="flex flex-col sm:flex-row xl:mt-[0.44px] mt-[33.56px] gap-[33px] xl:ml-[103px] font-barlow text-[12px] uppercase font-bold text-customGray tracking-[1px]"
           >
             <li class="cursor-pointer">Home</li>
             <li class="cursor-pointer">About us</li>
