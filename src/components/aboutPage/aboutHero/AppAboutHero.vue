@@ -7,12 +7,12 @@
     />
     <div class="absolute top-0 w-full">
       <h1
-        class="lg:text-[40px] md:text-[32px] text-[28px] text-white font-black font-fraunces md:w-[493px] w-[150px] text-center md:text-left mt-[137px] mx-auto md:mx-0 md:ml-[85px]"
+        class="lg:text-[40px] md:text-[32px] text-[28px] text-white font-black font-fraunces md:w-[493px] w-[150px] text-center md:text-left mt-[129px] mx-auto md:mx-0 md:ml-[87px] tracking-[1px]"
       >
         About Us
       </h1>
       <p
-        class="text-base lg:w-[445px] md:w-[398px] w-[279px] text-descriptionGray md:text-left text-center font-normal font-barlow mx-auto md:ml-[86px] mt-[24px]"
+        class="text-base lg:w-[445px] md:w-[398px] w-[279px] text-descriptionGray md:text-left text-center font-normal font-barlow mx-auto md:ml-[86px] mt-[18px] leading-[26px]"
       >
         Coffeeroasters began its journey of exotic discovery in 1999,
         highlighting stories of coffee from around the world. We have since been
