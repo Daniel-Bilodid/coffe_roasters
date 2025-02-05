@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="pl-[86px]">
     <div
-      class="w-[255px] h-[32px] text-left font-fraunces text-customGray font-black text-2xl mt-[168px]"
+      class="w-[255px] h-[32px] text-left mx-auto lg:mx-0 font-fraunces text-customGray font-black text-2xl mt-[168px]"
     >
       Our headquarters
     </div>
 
-    <div class="mt-[72px] flex">
+    <div class="mt-[72px] flex flex-col lg:flex-row items-center">
       <div>
         <img :src="uk" alt="United Kingdom" />
         <p
@@ -24,7 +24,7 @@
         </p>
       </div>
 
-      <div class="ml-[108px]">
+      <div class="lg:ml-[98px]">
         <img :src="canada" alt="Canada" />
         <p
           class="w-[272px] h-[36px] text-left font-fraunces text-customBlack text-[32px] font-black mt-[45.93px]"
@@ -41,7 +41,7 @@
         </p>
       </div>
 
-      <div class="ml-[108px]">
+      <div class="lg:ml-[108px]">
         <img :src="australia" alt="Australia" />
         <p
           class="w-[272px] h-[36px] text-left font-fraunces text-customBlack text-[32px] font-black mt-[45.93px]"

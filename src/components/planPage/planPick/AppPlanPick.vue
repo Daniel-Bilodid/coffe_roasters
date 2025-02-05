@@ -170,7 +170,7 @@
       <div class="flex justify-end mt-[40px]">
         <button
           class="w-[217px] h-[56px] rounded-[6px] bg-customGreen font-fraunces text-[18px] font-black text-center text-descriptionGray mr-0"
-          @click="appModal = true"
+          @click="checkForm(selectedCards)"
         >
           Create my plan!
         </button>
@@ -255,6 +255,16 @@ export default {
       selectedIndex.value = sectionIndex;
     };
 
+    const checkForm = (cards) => {
+      for (let i = 0; i < cards.length; i++) {
+        if (cards[i] === "_____" && i !== 3) {
+          return false;
+        } else {
+          return (appModal.value = true);
+        }
+      }
+    };
+
     return {
       coffeeOptions,
       listOptions,
@@ -267,6 +277,7 @@ export default {
       selectedIndex,
       appModal,
       clearModal,
+      checkForm,
     };
   },
 };

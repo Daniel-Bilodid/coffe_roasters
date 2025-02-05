@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col lg:flex-row items-center lg:justify-center lg:gap-[125px] mt-[100px] lg:mt-[168px] px-6"
+    class="flex flex-col lg:flex-row items-center lg:justify-center lg:gap-[125px] mt-[100px] lg:mt-[168px] px-[5.5rem]"
   >
     <div class="w-full flex justify-center">
       <img
@@ -9,14 +9,14 @@
         alt="guy making a cup of coffee"
       />
     </div>
-    <div class="mt-[40px] lg:mt-[90px] text-center lg:text-left">
+    <div class="mt-[40px] lg:mt-[-23px] text-center lg:text-left">
       <h2
-        class="w-full font-fraunces font-black text-customBlack text-[28px] md:text-[32px] lg:text-[40px] mb-[16px] lg:mb-[32px]"
+        class="w-full font-fraunces font-black text-customBlack text-[28px] md:text-[32px] lg:text-[40px] mb-[16px] lg:mb-[26px] lg:mt-[15px]"
       >
         Our commitment
       </h2>
       <p
-        class="w-full md:w-[540px] font-barlow text-base text-customBlack opacity-[0.8] text-center lg:text-left"
+        class="w-full md:w-[540px] font-barlow text-base text-customBlack opacity-[0.8] text-center lg:text-left leading-[26px]"
       >
         We’re built on a simple mission and a commitment to doing good along the
         way. We want to make it easy for you to discover and brew the world’s
