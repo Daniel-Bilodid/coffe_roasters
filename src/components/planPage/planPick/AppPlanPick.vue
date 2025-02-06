@@ -84,8 +84,8 @@
           <h2
             :class="[
               selected && sectionIndex === 3
-                ? 'font-fraunces text-[40px] font-black text-customGray text-left mb-[56px] cursor-pointer opacity-[0.5]'
-                : 'font-fraunces text-[40px] font-black text-customGray text-left mb-[56px] cursor-pointer',
+                ? 'font-fraunces text-[40px] font-black text-customGray text-left mb-[88px] cursor-pointer opacity-[0.5] mt-[-5px] tracking-[0.8px]'
+                : 'font-fraunces text-[40px] font-black text-customGray text-left mb-[88px] cursor-pointer mt-[-5px] tracking-[0.8px]',
             ]"
             @click="toggleSection(sectionIndex)"
           >
@@ -100,13 +100,13 @@
 
         <div
           v-if="expandedSections[sectionIndex]"
-          class="flex flex-row gap-[23px]"
+          class="flex flex-row gap-[23px] mt-[-40px]"
         >
           <div
             v-for="(card, cardIndex) in section.cards"
             :key="cardIndex"
             :class="[
-              'w-[228px] h-[250px] rounded-[8px] cursor-pointer mb-[88px] hover:bg-customHover',
+              'w-[228px] h-[250px] rounded-[8px] cursor-pointer mb-[87px] hover:bg-customHover',
               selectedCards[sectionIndex] === card.title
                 ? 'bg-customGreen'
                 : 'bg-customCream',
@@ -137,14 +137,16 @@
         </div>
       </div>
 
-      <div class="w-[730px] h-[208px] bg-customDarkBlue rounded-[10px]">
+      <div
+        class="w-[730px] h-[208px] bg-customDarkBlue rounded-[10px] mt-[-25px]"
+      >
         <div
-          class="text-white opacity-[0.5] font-barlow text-base uppercase text-left ml-[64px] mt-[31px]"
+          class="text-white opacity-[0.5] font-barlow text-base uppercase text-left ml-[64px] mt-[47px]"
         >
           Order Summary
         </div>
         <div
-          class="w-[602px] h-[80px] ml-[64px] mr-[64px] text-white font-fraunces font-black text-[24px] text-left"
+          class="w-[602px] h-[80px] ml-[64px] mr-[64px] text-white font-fraunces font-black text-[24px] text-left mt-[12px] tracking-[1.9px]"
         >
           “I drink my coffee as
           <span class="text-customGreen">{{ selectedCards[0] || "_____" }}</span
