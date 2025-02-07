@@ -91,8 +91,13 @@
           >
             {{ section.title }}
           </h2>
+
           <img
-            class="w-[18.19px] h-[11.92px] mt-[30px]"
+            :class="[
+              expandedSections[sectionIndex]
+                ? 'rotate-180 w-[18.19px] h-[11.92px] mt-[30px]'
+                : 'rotate-0 w-[18.19px] h-[11.92px] mt-[30px]',
+            ]"
             :src="iconArrow"
             alt="arrow icon"
           />
@@ -107,17 +112,22 @@
             :key="cardIndex"
             :class="[
               'w-[228px] h-[250px] rounded-[8px] cursor-pointer mb-[87px] hover:bg-customHover',
-              selectedCards[sectionIndex] === card.title
+              selectedCards[sectionIndex] === (card.orderTitle || card.title)
                 ? 'bg-customGreen'
                 : 'bg-customCream',
             ]"
-            @click="selectCard(sectionIndex, card.title)"
+            @click="
+              selectCard(
+                sectionIndex,
+                card.orderTitle ? card.orderTitle : card.title
+              )
+            "
           >
             <div
               :class="[
                 'font-fraunces font-black text-2xl mt-[32px] ml-[28px] text-left ',
-                selectedCards[sectionIndex] === card.title
-                  ? 'text-white '
+                selectedCards[sectionIndex] === (card.orderTitle || card.title)
+                  ? 'text-white'
                   : 'text-black',
               ]"
             >
@@ -126,7 +136,7 @@
             <div
               :class="[
                 'font-barlow text-base text-customBlack text-left mt-[24px] ml-[28px] w-[172px] h-[78px]',
-                selectedCards[sectionIndex] === card.title
+                selectedCards[sectionIndex] === (card.orderTitle || card.title)
                   ? 'text-white '
                   : 'text-black',
               ]"
@@ -146,9 +156,9 @@
           Order Summary
         </div>
         <div
-          class="w-[602px] h-[80px] ml-[64px] mr-[64px] text-white font-fraunces font-black text-[24px] text-left mt-[12px] tracking-[1.9px]"
+          class="w-[602px] h-[80px] ml-[64px] mr-[64px] text-white font-fraunces font-black text-[24px] text-left mt-[12px] tracking-[0.5px]"
         >
-          “I drink my coffee as
+          “I drink my coffee <span>{{ selected ? "using " : "as " }}</span>
           <span class="text-customGreen">{{ selectedCards[0] || "_____" }}</span
           >, with a
           <span class="text-customGreen">{{
@@ -188,7 +198,7 @@
     <div
       class="w-[428px] ml-[64px] mr-[64px] text-customTextGray font-fraunces font-black text-[24px] mt-[57px] text-left"
     >
-      “I drink my coffee as
+      “I drink my coffee <span>{{ selected ? "using" : "as" }}</span>
       <span class="text-customGreen">{{ selectedCards[0] || "_____" }}</span
       >, with a
       <span class="text-customGreen">{{ selectedCards[1] || "_____" }}</span>
@@ -205,7 +215,6 @@
       >”
     </div>
   </AppPlanModal>
-  <button @click="clearFunc">clear</button>
 </template>
 
 <script>
@@ -250,7 +259,7 @@ export default {
     console.log(expandedSections.value);
     const selectCard = (sectionIndex, cardTitle) => {
       if (sectionIndex === 0) {
-        selected.value = cardTitle === "Capsule";
+        selected.value = cardTitle === "Capsules";
       }
 
       selectedCards.value[sectionIndex] = cardTitle;

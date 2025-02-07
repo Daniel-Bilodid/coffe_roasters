@@ -4,6 +4,7 @@ export const coffeeOptions = [
     cards: [
       {
         title: "Capsule",
+        orderTitle: "Capsules",
         description: "Compatible with Nespresso systems and similar brewers.",
       },
       {
