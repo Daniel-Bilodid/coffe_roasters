@@ -1,10 +1,14 @@
 <template>
   <div>
-    <div class="ml-[86px] mr-[86px] relative mt-[100px]">
-      <img class="w-[1111px] mx-auto mt-[134px]" :src="collection" alt="" />
+    <div class="md:ml-[86px] md:mr-[86px] relative mt-[100px]">
+      <img
+        class="w-[375px] md:w-[unset] mx-auto mt-[134px]"
+        :src="collection"
+        alt=""
+      />
 
       <div
-        class="flex flex-col xl:flex-row w-[100%] gap-[25px] items-center xl:justify-center mt-[-50px]"
+        class="flex flex-col xl:flex-row w-[100%] gap-[25px] items-center xl:justify-center mt-[30px] md:mt-[-50px]"
       >
         <div
           v-for="card in cards"

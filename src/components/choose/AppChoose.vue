@@ -9,7 +9,7 @@
         Why choose us?
       </p>
       <p
-        class="font-barlow text-base text-descriptionGray w-[279px] md:w-[529px] text-center mx-auto mt-[30px]"
+        class="font-barlow text-base text-descriptionGray w-[279px] md:w-[529px] text-center mx-auto mt-[30px] opacity-[0.8]"
       >
         A large part of our role is choosing which particular coffees will be
         featured in our range. This means working closely with the best coffee
@@ -37,7 +37,7 @@
         />
         <div>
           <p
-            class="font-black text-2xl font-fraunces text-descriptionGray mt-[41px] xl:mt-[56px] text-left xl:text-center ml-[55.5px] xl:ml-0"
+            class="font-black text-2xl font-fraunces text-descriptionGray mt-[41px] xl:mt-[56px] text-center md:text-left xl:text-center md:ml-[55.5px] xl:ml-0"
             :style="{
               marginTop: card.id === 3 ? '68px' : '',
             }"
@@ -45,7 +45,7 @@
             {{ card.title }}
           </p>
           <p
-            class="font-barlow text-base text-left font-normal text-descriptionGray w-[81%] ml-[55.5px] mb-[41px] xl:mb-0 xl:ml-[46px] xl:w-[255px] xl:text-center mx-auto mt-[24px]"
+            class="font-barlow text-base text-center md:text-left font-normal text-descriptionGray w-[81%] md:ml-[55.5px] mb-[41px] xl:mb-0 xl:ml-[46px] xl:w-[255px] xl:text-center mx-auto mt-[24px]"
           >
             {{ card.description }}
           </p>

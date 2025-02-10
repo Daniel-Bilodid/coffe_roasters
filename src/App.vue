@@ -36,6 +36,14 @@ body {
   margin-right: 310px;
   margin-top: 43.56px;
 }
+
+@media (max-width: 1440px) {
+  #app {
+    margin-left: 109px;
+    margin-right: 109px;
+  }
+}
+
 @media (max-width: 1024px) {
   #app {
     margin-left: 55px;
@@ -47,6 +55,12 @@ body {
   #app {
     margin-left: 35px;
     margin-right: 35px;
+  }
+}
+@media (max-width: 425px) {
+  #app {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 </style>
