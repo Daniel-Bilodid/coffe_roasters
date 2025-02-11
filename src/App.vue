@@ -26,6 +26,9 @@ body {
 
   background-color: #fefcf7;
 }
+img {
+  max-width: unset;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -37,7 +40,7 @@ body {
   margin-top: 43.56px;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
   #app {
     margin-left: 109px;
     margin-right: 109px;

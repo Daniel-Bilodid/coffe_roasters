@@ -2,11 +2,12 @@
   <div
     class="flex flex-col lg:flex-row items-center lg:justify-center lg:gap-[125px] mt-[100px] lg:mt-[168px] px-[5.5rem]"
   >
-    <div class="w-full flex justify-center">
+    <div class="flex justify-center">
       <img
         class="w-[280px] h-[320px] md:w-[445px] md:h-[520px] rounded-[8px]"
         :src="commitment"
         alt="guy making a cup of coffee"
+        style="max-width: none; height: auto"
       />
     </div>
     <div class="mt-[40px] lg:mt-[-23px] text-center lg:text-left">
@@ -16,7 +17,7 @@
         Our commitment
       </h2>
       <p
-        class="w-full md:w-[540px] font-barlow text-base text-customBlack opacity-[0.8] text-center lg:text-left leading-[26px]"
+        class="w-full md:w-[339px] xl:w-[540px] font-barlow text-base text-customBlack opacity-[0.8] text-center lg:text-left leading-[26px]"
       >
         We’re built on a simple mission and a commitment to doing good along the
         way. We want to make it easy for you to discover and brew the world’s
