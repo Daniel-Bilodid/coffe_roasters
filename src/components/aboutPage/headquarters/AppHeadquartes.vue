@@ -24,7 +24,7 @@
         </p>
       </div>
 
-      <div class="lg:ml-[98px]">
+      <div class="xl:ml-[98px]">
         <img :src="canada" alt="Canada" />
         <p
           class="w-[272px] h-[36px] text-left font-fraunces text-customBlack text-[32px] font-black mt-[45.93px]"
@@ -41,7 +41,7 @@
         </p>
       </div>
 
-      <div class="lg:ml-[108px]">
+      <div class="xl:ml-[108px]">
         <img :src="australia" alt="Australia" />
         <p
           class="w-[272px] h-[36px] text-left font-fraunces text-customBlack text-[32px] font-black mt-[45.93px]"

@@ -40,6 +40,13 @@ img {
   margin-top: 43.56px;
 }
 
+@media (max-width: 1800px) {
+  #app {
+    margin-left: 209px;
+    margin-right: 209px;
+  }
+}
+
 @media (max-width: 1600px) {
   #app {
     margin-left: 109px;

@@ -17,7 +17,7 @@
         Our commitment
       </h2>
       <p
-        class="w-full md:w-[339px] xl:w-[540px] font-barlow text-base text-customBlack opacity-[0.8] text-center lg:text-left leading-[26px]"
+        class="w-[320px] md:w-[339px] xl:w-[540px] font-barlow text-base text-customBlack opacity-[0.8] text-center lg:text-left leading-[26px]"
       >
         We’re built on a simple mission and a commitment to doing good along the
         way. We want to make it easy for you to discover and brew the world’s
