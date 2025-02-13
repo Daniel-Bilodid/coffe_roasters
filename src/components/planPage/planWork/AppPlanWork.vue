@@ -7,7 +7,7 @@
         ></div>
 
         <div
-          class="w-[349px] h-[2px] border-2 border-customPink mt-[12px]"
+          class="2xl:w-[349px] w-[263px] h-[2px] border-2 border-customPink mt-[12px]"
         ></div>
 
         <div
@@ -15,7 +15,7 @@
         ></div>
 
         <div
-          class="w-[349px] h-[2px] border-2 border-customPink mt-[12px]"
+          class="2xl:w-[349px] w-[263px] h-[2px] border-2 border-customPink mt-[12px]"
         ></div>
 
         <div
@@ -23,7 +23,7 @@
         ></div>
       </div>
 
-      <div class="flex gap-[95px] mt-[7px]">
+      <div class="flex 2xl:gap-[95px] gap-[10px] mt-[7px]">
         <div>
           <div
             class="w-[90px] h-[72px] font-black text-7xl font-fraunces text-customPink mt-[59px]"
