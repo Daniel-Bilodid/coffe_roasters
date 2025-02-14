@@ -17,7 +17,7 @@
     />
 
     <div
-      class="absolute top-0 w-full flex flex-col items-center lg:items-start"
+      class="absolute top-0 w-full flex flex-col items-center md:items-start"
     >
       <h1
         class="lg:text-7xl text-white font-black font-fraunces lg:w-[493px] md:w-[324px] w-[279px] md:text-left text-center mt-[131px] md:ml-[85px] tracking-[1.4px] sm:text-[48px] text-[40px] mx-auto"

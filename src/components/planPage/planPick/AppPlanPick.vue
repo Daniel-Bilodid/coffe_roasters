@@ -1,7 +1,7 @@
 <template>
-  <div class="flex mt-[168px]">
+  <div class="flex mt-[168px] justify-end xl:justify-normal">
     <div>
-      <ul class="w-[255px] h-[356px] ml-[85px]">
+      <ul class="w-[255px] h-[356px] ml-[85px] hidden xl:block">
         <li
           :class="[
             selectedIndex === 0
@@ -74,7 +74,7 @@
       </ul>
     </div>
 
-    <div class="flex flex-col ml-[125px]">
+    <div class="flex flex-col ml-[125px] w-[100%] xl:w-unset">
       <div
         v-for="(section, sectionIndex) in coffeeOptions"
         :key="sectionIndex"
@@ -84,8 +84,8 @@
           <h2
             :class="[
               selected && sectionIndex === 3
-                ? 'font-fraunces text-[40px] font-black text-customGray text-left mb-[88px] cursor-pointer opacity-[0.5] mt-[-5px] tracking-[0.8px]'
-                : 'font-fraunces text-[40px] font-black text-customGray text-left mb-[88px] cursor-pointer mt-[-5px] tracking-[0.8px]',
+                ? 'font-fraunces xl:text-[40px] text-[32px] font-black text-customGray text-left mb-[88px] cursor-pointer opacity-[0.5] mt-[-5px] tracking-[0.8px]'
+                : 'font-fraunces xl:text-[40px] text-[32px] font-black text-customGray text-left mb-[88px] cursor-pointer mt-[-5px] tracking-[0.8px]',
             ]"
             @click="toggleSection(sectionIndex)"
           >
@@ -105,13 +105,13 @@
 
         <div
           v-if="expandedSections[sectionIndex]"
-          class="flex flex-row gap-[23px] mt-[-40px]"
+          class="flex flex-col md:flex-row md:gap-[23px] mt-[-40px]"
         >
           <div
             v-for="(card, cardIndex) in section.cards"
             :key="cardIndex"
             :class="[
-              'w-[228px] h-[250px] rounded-[8px] cursor-pointer mb-[87px] hover:bg-customHover',
+              'w-[328px] md:w-[228px] md:h-[250px] h-[140px]  rounded-[8px] cursor-pointer mb-[16px] md:mb-[87px] hover:bg-customHover',
               selectedCards[sectionIndex] === (card.orderTitle || card.title)
                 ? 'bg-customGreen'
                 : 'bg-customCream',
@@ -125,7 +125,7 @@
           >
             <div
               :class="[
-                'font-fraunces font-black text-2xl mt-[32px] ml-[28px] text-left ',
+                'font-fraunces font-black text-2xl mt-[24px] md:mt-[32px] ml-[28px] text-left ',
                 selectedCards[sectionIndex] === (card.orderTitle || card.title)
                   ? 'text-white'
                   : 'text-black',
@@ -135,7 +135,7 @@
             </div>
             <div
               :class="[
-                'font-barlow text-base text-customBlack text-left mt-[24px] ml-[28px] w-[172px] h-[78px]',
+                'font-barlow text-base text-customBlack text-left mt-[8px] md:mt-[24px] ml-[28px] w-[278px] md:w-[172px] h-[52px] md:h-[78px]',
                 selectedCards[sectionIndex] === (card.orderTitle || card.title)
                   ? 'text-white '
                   : 'text-black',
@@ -148,15 +148,15 @@
       </div>
 
       <div
-        class="w-[730px] h-[208px] bg-customDarkBlue rounded-[10px] mt-[-25px]"
+        class="w-[100%] md:w-unset h-[328px] md:h-[208px] bg-customDarkBlue rounded-[10px] mt-[-25px]"
       >
         <div
-          class="text-white opacity-[0.5] font-barlow text-base uppercase text-left ml-[64px] mt-[47px]"
+          class="text-white opacity-[0.5] font-barlow text-base uppercase text-left ml-[64px] mt-[31px]"
         >
           Order Summary
         </div>
         <div
-          class="w-[602px] h-[80px] ml-[64px] mr-[64px] text-white font-fraunces font-black text-[24px] text-left mt-[12px] tracking-[0.5px]"
+          class="md:w-[602px] w-[279px] h-[80px] ml-[64px] mr-[64px] text-white font-fraunces font-black text-[24px] text-left mt-[12px] tracking-[0.5px]"
         >
           “I drink my coffee <span>{{ selected ? "using " : "as " }}</span>
           <span class="text-customGreen">{{ selectedCards[0] || "_____" }}</span
